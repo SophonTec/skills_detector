@@ -6,7 +6,7 @@ from .scraper_base import BaseScraper
 from ..core.config import settings
 
 
-class GitHubScraper(BaseScraper):
+class GitHubSkillsScraper(BaseScraper):
     def get_source_name(self) -> str:
         return "github"
 
@@ -18,10 +18,29 @@ class GitHubScraper(BaseScraper):
 
         results = []
         queries = [
-            ("topic:ai+language:python", "stars"),
-            ("topic:machine-learning+language:python", "stars"),
-            ("topic:deep-learning+language:python", "stars"),
-            ("topic:llm+language:python", "stars"),
+            ("awesome-openai+language:python", "stars"),
+            ("awesome-chatgpt+language:python", "stars"),
+            ("awesome-langchain+language:python", "stars"),
+            ("awesome-llm+language:python", "stars"),
+            ("awesome-anthropic+language:python", "stars"),
+            ("openai-examples+language:python", "stars"),
+            ("chatgpt-examples+language:python", "stars"),
+            ("langchain-examples+language:python", "stars"),
+            ("claude-examples+language:python", "stars"),
+            ("cohere-examples+language:python", "stars"),
+            ("codex+language:python", "stars"),
+            ("openclaw+language:python", "stars"),
+            ("clawdbot+language:python", "stars"),
+            ("opencode+language:python", "stars"),
+            ("rag-implementation+language:python", "stars"),
+            ("rag-example+language:python", "stars"),
+            ("agent-framework+language:python", "stars"),
+            ("autonomous-agent+language:python", "stars"),
+            ("function-calling+language:python", "stars"),
+            ("prompt-engineering+language:python", "stars"),
+            ("fine-tuning-examples+language:python", "stars"),
+            ("api-integration-example+language:python", "stars"),
+            ("streaming-implementation+language:python", "stars"),
         ]
 
         async with httpx.AsyncClient() as client:

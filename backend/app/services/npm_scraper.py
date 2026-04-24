@@ -62,6 +62,8 @@ class NpmScraper(BaseScraper):
             "likes": None,
             "last_activity": self._parse_datetime(
                 package.get("date", {}).get("modified")
+                if isinstance(package.get("date"), dict)
+                else None
             ),
         }
 

@@ -3,18 +3,21 @@ from apscheduler.triggers.interval import IntervalTrigger
 from sqlalchemy.orm import Session
 
 from .scraper_base import BaseScraper
-from .github_scraper import GitHubScraper
+from .github_scraper import GitHubSkillsScraper
 from .npm_scraper import NpmScraper
 from .pypi_scraper import PyPIScraper
 from .huggingface_scraper import HuggingFaceScraper
 from ..core.config import settings
+
+# 移除错误导入
+# from .github_skills_scraper import GitHubSkillsScraper
 
 
 class ScrapingScheduler:
     def __init__(self):
         self.scheduler = AsyncIOScheduler()
         self.scrapers = {
-            "github": GitHubScraper,
+            "github": GitHubSkillsScraper,
             "npm": NpmScraper,
             "pypi": PyPIScraper,
             "huggingface": HuggingFaceScraper,

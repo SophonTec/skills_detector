@@ -8,6 +8,7 @@ from datetime import datetime
 from .core.config import settings
 from .models.database import init_db, get_db
 from .api import skills, system
+from .services.github_scraper import GitHubSkillsScraper
 from .services.scheduler import ScrapingScheduler
 
 
@@ -73,3 +74,9 @@ def create_app() -> FastAPI:
 
 
 app = create_app()
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000, reload=True)
